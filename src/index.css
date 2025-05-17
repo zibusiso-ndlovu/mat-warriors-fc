@@ -1,0 +1,126 @@
+/* Import Tailwind directives */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Add these classes to your tailwind.css or styles */
+@layer components {
+  .footer-section {
+    @apply flex flex-col space-y-4;
+  }
+  
+  .footer-title {
+    @apply text-sm font-semibold text-gray-400 tracking-wider uppercase;
+  }
+  
+  .footer-link {
+    @apply text-base text-gray-600 hover:text-blue-600 transition-colors duration-200;
+  }
+   .nav-link {
+    @apply font-semibold text-sm uppercase tracking-wide 
+           transition-colors duration-200;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 
+           font-semibold text-sm uppercase tracking-wide 
+           transition-all duration-200 rounded-md;
+  }
+
+  .btn-primary {
+    @apply bg-[#DC2626] text-white hover:bg-[#b91c1c];
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+
+/* In your CSS file */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+/* src/styles/global.css */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-slow {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll-slow:hover {
+  animation-play-state: paused;
+}
+
+/* Optional: Add smooth scrolling */
+.sponsors-container {
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+

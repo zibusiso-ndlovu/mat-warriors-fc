@@ -1,0 +1,20 @@
+# Dockerfile.dev
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies with legacy peer deps flag
+RUN npm install --legacy-peer-deps
+
+# Copy all files
+COPY . .
+
+# Expose port 3000
+EXPOSE 3000
+
+# Start the app in development mode
+CMD ["npm", "start"]
